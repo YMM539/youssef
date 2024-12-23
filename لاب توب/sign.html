@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول وإنشاء حساب</title>
+  <style>
+    /* تصميم الحاوية العامة */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background-color: blueviolet;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* تصميم التبويبات */
+.tab {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background-color: #ddd;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #bbb;
+}
+
+#login:target ~ .form-container,
+#signup:target ~ .form-container {
+  display: none;
+}
+
+/* عرض النموذج المطلوب */
+#login:target ~ #login,
+#signup:target ~ #signup {
+  display: block;
+}
+
+.form-container {
+  display: none;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <!-- تبويب التنقل بين تسجيل الدخول وإنشاء الحساب -->
+        <div class="tab">
+          <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D9%84%D8%A7%D8%A8%20%D8%AA%D9%88%D8%A8/%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D8%A7%D9%84%D8%AF%D8%AE%D9%88%D9%84.html" class="tab-button">تسجيل الدخول</a>
+          <a href="#signup" class="tab-button">إنشاء حساب</a>
+        </div>
+    
+        <!-- نموذج تسجيل الدخول -->
+        <div id="login" class="form-container">
+          <h2>تسجيل الدخول</h2>
+          <form action="#">
+            <label for="login-email">البريد الإلكتروني</label>
+            <input type="email" id="login-email" required>
+            
+            <label for="login-password">كلمة المرور</label>
+            <input type="password" id="login-password" required>
+            
+            <button type="submit" class="btn">دخول</button>
+          </form>
+        </div>
+    
+        <!-- نموذج إنشاء الحساب -->
+        <div id="signup" class="form-container">
+          <h2>إنشاء حساب</h2>
+          <form action="#">
+            <label for="signup-username">اسم المستخدم</label>
+            <input type="text" id="signup-username" required>
+            
+            <label for="signup-email">البريد الإلكتروني</label>
+            <input type="email" id="signup-email" required>
+            
+            <label for="signup-password">كلمة المرور</label>
+            <input type="password" id="signup-password" required>
+            
+            <button type="submit" class="btn">إنشاء حساب</button>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

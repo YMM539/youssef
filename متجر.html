@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر-للاجهزة الالكترونية</title>
+    <link rel="icon" href="متجر1.png"/>
+    <style>
+        body {
+          background-color: #cccccc;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        div a {
+          color: black;
+          text-decoration: none;
+        }
+        li a:hover {
+            background-color: black;
+        }
+        header {
+            background-color: blueviolet;
+            color: white;
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo img {
+            height: 50px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.search-input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 16px;
+  transition: width 0.3s;
+}
+
+.search-input:focus {
+  width: 300px;
+  border-color: #4a90e2;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #000000;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.btn.login {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.btn.login:hover {
+  background-color: #357abd;
+}
+
+
+.btn.signup {
+  background-color: #ffdd57;
+  color: #333;
+}
+
+.btn.signup:hover {
+  background-color: #f4c042;
+}
+
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+.product-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+
+.price {
+  font-size: 18px;
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+
+.buy-button {
+  padding: 10px 15px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #357abd;
+}
+
+
+.category-nav {
+  background-color: #4a90e2;   
+  padding: 10px 0;            
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.category-nav ul {
+  list-style-type: none;       
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;     
+  gap: 20px;                   
+}
+
+.category-nav li {
+  margin: 0;
+}
+
+.category-nav a {
+  color: white;               
+  font-size: 16px;             
+  font-weight: bold;           
+  text-decoration: none;       
+  padding: 10px 15px;          
+  border-radius: 5px;          
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-nav a:hover {
+  background-color: #357abd; 
+  color: #ffdd57;              
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin: 8px 0;
+}
+
+.footer-section a {
+  color: #ffdd57;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #4a90e2;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #777;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D9%85%D8%AA%D8%AC%D8%B1.html#home"><img src="متجر.png" alt="شعار الموقع" /></a>
+        </div>
+        <div class="search-box" dir="ltr">
+            <input type="text" class="search-input" placeholder="ابحث هنا...">
+            <button class="search-button">🔍</button>
+          </div>
+        <nav>
+            <ul style="list-style-type: none; margin:0; padding: 0; overflow: hidden; background-color: blueviolet;">
+                <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D9%85%D8%AA%D8%AC%D8%B1.html#home">الرئيسية</a></li>
+                <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.html">الخدمات</a></li>
+                <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+        <div class="button-container">
+            <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D9%84%D8%A7%D8%A8%20%D8%AA%D9%88%D8%A8/%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D8%A7%D9%84%D8%AF%D8%AE%D9%88%D9%84.html"><button class="btn login">تسجيل الدخول</button></a>
+            <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D8%AD%D8%B3%D8%A7%D8%A8.html"><button class="btn signup">إنشاء حساب</button></a>
+          </div>
+          
+    </header>
+
+    <nav class="category-nav">
+      <ul>
+        <li><a href="#electronics">شاشة كمبيوتر</a></li>
+        <li><a href="#clothing">تلفون</a></li>
+        <li><a href="#home-appliances">لاب توب</a></li>
+        <li><a href="#books">تلفزيونات</a></li>
+        <li><a href="#toys">ألعاب</a></li>
+      </ul>
+    </nav>
+    
+
+
+    <div class="products-container">
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%AA%D9%81%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC.html"><div class="product-card">
+        <img src="لاب توب/1.jpg" alt="منتج 1">
+        <h3>Apple MacBook Air - M1 chip with 8-core CPU and 7-core GPU</h3>
+        <p class="price">جنيه 47,499.00</p>
+        <p class="description">وابل ماك بوك اير - شريحة M1 مع معالج ثماني النواة ومعالج رسومات 7 أنوية - ذاكرة 8 جيجابايت - 256 جيجابايت - شريحة M1 - شاشة 13 بوصة - MacOS - رمادي.</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC2.html"><div class="product-card">
+        <img src="لاب توب/2.jpg" alt="منتج 2">
+        <h3>ASUS TUF Gaming F15 FX507ZC4-HN002W Laptop</h3>
+        <p class="price">جنيه 47,999.00</p>
+        <p class="description">اب توب ASUS TUF Gaming F15 FX507ZC4-HN002W - انتل® كور™ i7-12700H - 16 جيجا بايت - هارد 512 جيجا بايت SSD - جرافيك NVIDIA® GeForce RTX 3050 - شاشة FHD 15.6 بوصة - ويندوز11 - رمادي</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC3.html"><div class="product-card">
+        <img src="لاب توب/3.jpg" alt="منتج 3">
+        <h3>ASUS Zenbook S 14 OLED UX5406SA-PV007W Laptop </h3>
+        <p class="price">جنيه 86,999.00</p>
+        <p class="description">لاب توب ASUS Zenbook S 14 OLED UX5406SA-PV007W - Intel® Core™ Ultra 7 - 32 جيجا بايت - 1 تيرا بايت SSD - Intel® Arc™ Graphics - شاشة OLED 3K 14 بوصة - ويندوز11 - رمادي</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+
+   <div class="products-container">
+    <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC4.html"><div class="product-card">
+        <img src="تلفون/apple-iphone-16-pink-1.jpg" alt="منتج 1">
+        <h3>Apple iPhone 16 </h3>
+        <p class="price">جنيه 48,699.00</p>
+        <p class="description">ابل ايفون 16 - 128 جيجا بايت - وردي</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC5.html"><div class="product-card">
+        <img src="تلفون/apple-iphone-16-pro-max-natural-7.jpg" alt="منتج 2">
+        <h3>Apple iPhone 16 Pro Max </h3>
+        <p class="price">جنيه 80,699.00</p>
+        <p class="description">ابل ايفون 16 برو ماكس - 256 جيجا بايت - تيتانيوم طبيعي</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/6.html"><div class="product-card">
+        <img src="لاب توب/4.png" alt="منتج 3">
+        <h3>Apple Macbook Pro M3 - 8 Cores CPU With 10 Cores GPU - 8GB </h3>
+        <p class="price">جنيه 99,899.00</p>
+        <p class="description">ابل ماك بوك برو M3 - معالج 8 أنوية مع معالج رسومات 10 أنوية - ذاكرة 8 جيجا بايت - SSD 512 جيجا بايت - MacOS 14 بوصة - فضي</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+ 
+    <div class="products-container">
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/7.html"><div class="product-card">
+        <img src="تلفون/light-blue-min_1.jpg" alt="منتج 1">
+        <h3>Samsung Galaxy A15</h3>
+        <p class="price">جنيه 7,099.00</p>
+        <p class="description">سامسونج جلاكسى A15 - رامات 6 جيجا - 128 جيجا بايت - أزرق فاتح</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/8.html"><div class="product-card">
+        <img src="لاب توب/5.png" alt="منتج 2">
+        <h3>HP 14-em0004ne Laptop - AMD Ryzen 3-7320U </h3>
+        <p class="price">جنيه 17,499.00</p>
+        <p class="description">HP لاب توب 14-em0004ne - AMD Ryzen 3-7320U - 4 جيجا بايت - هارد 256 جيجا بايت SSD - AMD Radeon جرافيكس مدمج - شاشة HD 14 بوصة - ويندوز11 - فضى</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="9.html"><div class="product-card">
+        <img src="تلفون/mb918-1.jpg" alt="منتج 3">
+        <h3>Oppo Reno 12F 4G</h3>
+        <p class="price">جنيه 10,799.00</p>
+        <p class="description">اوبو رينو 12F 4G - رامات 8 جيجا - 256 جيجا بايت - أخضر</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+
+    <div class="products-container">
+      <a href="10.html"><div class="product-card">
+        <img src="لاب توب/6.jpg" alt="منتج 1">
+        <h3>Lenovo ThinkPad E16 Laptop - Intel® Core™ i7-1355U </h3>
+        <p class="price">جنيه 45,999.00</p>
+        <p class="description">Lenovo لاب توب ثينك باد E16 - انتل® كور™ i7-1355U - رام 8 جيجا بايت - هارد 512 جيجا بايت SSD - جرافيك NVIDIA® GeForce MX550 2 جيجا بايت - شاشة 16 بوصة FHD - أسود</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="11.html"><div class="product-card">
+        <img src="تلفون/mm126-min.jpg" alt="منتج 2">
+        <h3>Xiaomi Redmi A3 3GB RAM 64GB </h3>
+        <p class="price">جنيه 4,199.00</p>
+        <p class="description">شاومي ريدمي ايه 3 رام 3 جيجابايت 64 جيجابايت - أسود</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="12.html"><div class="product-card">
+        <img src="تلفون/samsung-galaxy-a05s-55.jpg" alt="منتج 3">
+        <h3>Samsung Galaxy A05s </h3>
+        <p class="price">جنيه 6,299.00</p>
+        <p class="description">سامسونج جلاكسى A05s - رامات 4 جيجا - 128 جيجا بايت - أسود</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+
+    <div class="products-container">
+      <a href="13.html"><div class="product-card">
+        <img src="العاب/_gm080-_.jpg" alt="منتج 1">
+        <h3>Sony Original Game </h3>
+        <p class="price">جنيه 5,899.00</p>
+        <p class="description">لوحة الألعاب الأصلية من سوني دوال سينس لبلاي ستيشن 5 + شاحن يد تحكم لبلاي ستيشن 5</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="14.html"><div class="product-card">
+        <img src="العاب/gc105-min.jpg" alt="منتج 2">
+        <h3>Redragon Chair </h3>
+        <p class="price">جنيه 8,749.00</p>
+        <p class="description">كرسي ريدراجون C602</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="15.html"><div class="product-card">
+        <img src="العاب/gm013-_-min.jpg" alt="منتج 3">
+        <h3>2B (GP026) 5in1 Racing wheel For PS3/PS4/PC/XBOX</h3>
+        <p class="price">جنيه 4,999.00</p>
+        <p class="description">2B (GP026) عجلة سباق 5 في 1 ل PS3 / PS4 / PC / XBOX ONE / SWITCH + 2B GP193 لوحة ألعاب لاسلكية واحدة للكمبيوتر الشخصي وبلاي ستيشن 4</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+    
+    <div class="products-container">
+      <a href="16.html"><div class="product-card">
+        <img src="العاب/gm013-1-min.jpg" alt="منتج 1">
+        <h3>Sony Original Game Pad DualSense PlayStation 5 </h3>
+        <p class="price">جنيه 4,149.00</p>
+        <p class="description">لوحة الألعاب الأصلية من سوني - دوال سينس بلاي ستيشن 5 - أسود</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="17.html"><div class="product-card">
+        <img src="العاب/gm511-min_1.jpg" alt="منتج 2">
+        <h3>Sony Playstation 5 Standard Slim </h3>
+        <p class="price">جنيه 35,489.00</p>
+        <p class="description">سوني بلاي ستيشن 5 ستاندرد سليم (1 سنة الضمان)</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="18.html"><div class="product-card">
+        <img src="العاب/gm656-1-min.jpg" alt="منتج 3">
+        <h3>Sony PlayStation 5 BUNDLE Disc Version Console 1TB Slim & FC 2024 Arabic </h3>
+        <p class="price">جنيه 36,429.00</p>
+        <p class="description">سوني بلاي ستيشن 5 BUNDLE نسخة القرص كونسول 1 تيرابايت سليم و FC 2024 عربي - (ضمان سنة 1)</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+
+    <div class="products-container">
+      <a href="19.html"><div class="product-card">
+        <img src="تلفزيون/tv615-min.jpg" alt="منتج 1">
+        <h3>Xiaomi 55" LED 4K UHD Smart Google TV</h3>
+        <p class="price">جنيه 18,999.00</p>
+        <p class="description">شاشة شاومي 55 انش ال اي دي 4K UHD سمارت جوجل - تلفزيون A 55</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="20.html"><div class="product-card">
+        <img src="تلفزيون/tv108-2.jpg" alt="منتج 2">
+        <h3>Armadillo TV LED 32 Inch HD Frameless Smart Android</h3>
+        <p class="price">جنيه 5,999.00</p>
+        <p class="description">تلفزيون أرماديلو إل إي دي 32 بوصة اتش دي بدون فريم سمارت اندرويد - ARM32VA1S</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="21.html"><div class="product-card">
+        <img src="تلفزيون/tv564-2.jpg" alt="منتج 3">
+        <h3>Tornado TV 50 Inch LED 4K UHD </h3>
+        <p class="price">جنيه 14,999.00</p>
+        <p class="description">تليفزيون تورنيدو 50 بوصة ال اي دي 4K UHD سمارت ريسيفر بلت ان بدون إطار - 50UA3400E</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+    </div>
+
+    <div class="products-container">
+      <a href="22.html"><div class="product-card">
+        <img src="تلفزيون/tv552-1-min.jpg" alt="منتج 1">
+        <h3>JAC TV 32 Inch LED HD Basic </h3>
+        <p class="price">جنيه 4,699.00</p>
+        <p class="description">شاشة جاك 32 بوصة ال اي دي اتش دي - 32JB310</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <a href="23.html"><div class="product-card">
+        <img src="تلفزيون/tv478-6-min_2.jpg" alt="منتج 2">
+        <h3>Samsung 55" Neo QLED 4K UHD Smart Built In Receiver </h3>
+        <p class="price">جنيه 49,999.00</p>
+        <p class="description">سامسونج تليفزيون 55 بوصة نيو كيو ال اي دي 4K UHD سمارت بريسيفر داخلى - QA55QN85D</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div></a>
+      
+      <div class="product-card">
+        <img src="تلفزيون/tv110-1_1.jpg" alt="منتج 3">
+        <h3>Armadillo TV 55 Inch UHD Smart LED with Built-in Receiver </h3>
+        <p class="price">جنيه 17,099.00</p>
+        <p class="description">تلفزيون أرماديلو 55 بوصة فائق الوضوح سمارت ال اي دي مع ريسيفر داخلي - ARM55T1S-24</p>
+        <button class="buy-button">اشتري الآن</button>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section quick-links">
+          <h3>روابط سريعة</h3>
+          <ul>
+            <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D9%85%D8%AA%D8%AC%D8%B1.html#home">الرئيسية</a></li>
+            <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.html">الخدمات</a></li>
+            <li><a href="file:///E:/%D9%85%D8%AA%D8%AC%D8%B1/%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-section contact-info">
+          <h3>معلومات الاتصال</h3>
+          <p>العنوان: شارع الملك، الرياض، المملكة العربية السعودية</p>
+          <p>الهاتف: +966 123 456 789</p>
+          <p>البريد الإلكتروني: info@example.com</p>
+        </div>
+    
+        <div class="footer-section social-media">
+          <h3>تابعنا</h3>
+          <a href="#" class="social-icon">🔵 فيسبوك</a>
+          <a href="#" class="social-icon">🐦 تويتر</a>
+          <a href="#" class="social-icon">📸 إنستغرام</a>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        &copy; 2023 جميع الحقوق محفوظة | موقعك الإلكتروني
+      </div>
+    </footer>
+</body>
+</html>
